@@ -1,0 +1,147 @@
+UI Components 
+    - Reusable code block which can be resued in multiple screens
+
+- JSX 
+    - javascript extended,
+        - compiler 
+            babel 
+        - task runner 
+            grunt
+
+
+- SPA 
+    Single page application 
+        - every request goes to index.html, and everything is rendered in index.html
+
+- CORS 
+    - Cross Origin Reference Site 
+
+    localhost:3000,
+
+    unpkg.com, crossorigin
+        
+        b.com 
+
+
+
+React 
+#### Components
+    - Reusable code block that can be used in multiple UI Pages 
+
+    2 types 
+    a. Statefull 
+        - Class Based Component
+    b. StateLess 
+        - Functional Component 
+
+
+    or 
+
+    a. Class Based Component 
+    b. Functional Component 
+
+### State and Props 
+
+    - Props 
+        - these are properties for a component, which is also the incoming data for that component 
+
+    - State 
+        - those values or data which is preserved by the component itself
+
+
+
+class A{
+    name; 
+}
+
+
+function Afunc(){
+    name;
+}
+
+obj = new A;
+
+obj.name; 
+
+Afunc();
+
+// name 
+
+
+/// STORAGE 
+- Cookie 
+    - for a certain period of time 
+    - cookie self destroies, when it gets matrued 
+    - A domain can have max of 50 cookie 
+    - a cookie can have max of 4096 chars 
+    - Cookie can have only primary data types
+            - null, bool, string, number 
+    - cookie is domain as well as path dependent 
+        - a.com 
+            a.com/abc 
+            a.com/xyz
+
+- Localstorage
+    - sets on domain
+    - can have max of 5mb of data 
+    - Cookie can have only primary data types
+            - null, bool, string, number 
+    - domain dependent 
+
+- 
+    login 
+        refresh 
+    login 
+        open in new tab
+        
+
+Redux 
+    - Install reduc, react-redux, redux-thunk 
+
+
+    - create a store in a file 
+
+        createStore(reducer, defaultstate, applyMiddleware())
+    
+    - Create reducers 
+        export const userReducer = (state, action) => {
+            switch();
+            return {
+                ...state,
+                user: action.payload
+            }
+        }
+
+
+        combineReducer({
+            user: userReducer
+        })
+    
+    - create actions 
+        export const login = (email, password) => {
+            return {
+                type: ACTION_TYPE,
+                payload: {email: email, password: password}
+            }
+        }
+    
+    - connect react component with redux 
+
+        import {connect} from "react-redux"
+
+        function NameComponent(Props){
+
+            Props.funcName(email, password)
+        }
+
+
+        const mapStateToProps = (rootStore) => ({
+            stateKey: rootStore.stateValue
+        })
+
+        const mapDispatchToProps = {
+            funcName: actionFunc
+        }
+
+
+        export const Component = connect(mapStateToProps, mapDispatchToProps)(NameComponent)

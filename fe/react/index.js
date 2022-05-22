@@ -1,0 +1,1 @@
+ReactDOM.render("Hello from react", document.getElementById('content'));
